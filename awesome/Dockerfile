@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 RUN apt-get update && \
     apt-get install -y git wget gcc g++ && \
@@ -12,6 +12,7 @@ ENV LGIVER 0.8.0
 ENV TESTS_SCREEN_SIZE 1921x1079
 ENV LUAINCLUDE /usr/include/${LUANAME}
 ENV LUALIBRARY /usr/lib/x86_64-linux-gnu/lib${LUANAME}.so
+ENV DEBIAN_FRONTEND noninteractive
 
 # Install build dependencies.
 # See also `apt-cache showsrc awesome | grep -E '^(Version|Build-Depends)'`.
